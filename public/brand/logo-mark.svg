@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#F7F3EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Coqueiral da Barra">
+  <path d="M30 51C31 42 36 35 34 26"/>
+  <path d="M34 26C33 18 34 12 39 8"/>
+  <path d="M34 26C28 17 18 15 9 20"/>
+  <path d="M34 26C26 24 18 27 14 35"/>
+  <path d="M34 26C40 17 50 15 58 20"/>
+  <path d="M34 26C42 24 50 27 54 35"/>
+  <circle cx="32.500" cy="29.500" r="1.800" fill="#F7F3EA" stroke="none"/>
+  <circle cx="36.500" cy="29.500" r="1.800" fill="#F7F3EA" stroke="none"/>
+  <path d="M8 55q5.500-4 11 0t11 0 11 0 11 0" stroke-width="2.600"/>
+</svg>

@@ -1,0 +1,8 @@
+.DS_Store
+._*
+node_modules/
+.vercel/
+.env*
+
+# Prints de sites de terceiros (85 MB) ficam só no computador
+referencias/
