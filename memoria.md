@@ -41,6 +41,8 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 - 2026-10-14 — **Logo e favicon criados** (palmeira de coqueiro + onda em cobre, fundo verde-noite): `public/brand/`, `public/favicon.svg`, `favicon.ico`, apple-touch-icon, ícones 192/512, `og-image.jpg`. Wordmark segue em Fraunces itálico (texto vivo).
 - 2026-10-14 — **Estrutura mudou**: o site agora vive em `public/` (Vercel publica só essa pasta; originais, specs e referências ficam fora do site). Publicação: GitHub → Vercel (HTML estático, sem build). `referencias/` fica fora do Git (85 MB, prints de terceiros).
 
+- 2026-10-14 — **Repositório GitHub público**: https://github.com/neliocastro/coqueiral-da-barra (branch `main`). Escolha do cliente (público). Próximo: importar na Vercel (Output Directory `public`, sem build).
+
 ## Decisões rejeitadas
 - (nenhuma até agora)
 
@@ -75,6 +77,7 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 - Traduções EN revisadas.
 
 ## Próximos passos (após a v1)
+- Conectar o repo na Vercel e publicar; depois definir domínio e trocar `og:image` para URL absoluta (https://SEU-DOMINIO/imagens-site/og-image.jpg); adicionar sitemap.xml e `<link rel="canonical">`.
 - Cliente revisar a página; ajustar textos/fotos; preencher medidas de cada lote e confirmar qual cor do mapa é cada lote.
 - Rodar Lighthouse e teste de teclado/leitor de tela; testar Safari/Firefox.
 - Logotipo, domínio, hospedagem, favicon final, imagem Open Graph.
