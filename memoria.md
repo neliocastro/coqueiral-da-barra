@@ -51,6 +51,8 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 
 - 2026-10-14 — **PageSpeed pós-otimização aprovado pelo cliente** ("perfeito"). Detalhes numéricos do novo PSI não foram registrados.
 
+- 2026-10-14 — **Domínio atual: `coqueiral-da-barra-public.vercel.app`**. Cliente quer trocar depois para `coqueiral-da-barra.vercel.app` (parecia livre; trocar em Settings → Domains e redirecionar o antigo com 308). Quando trocar: definir `og:image` absoluto, `canonical` e `sitemap.xml` com o domínio novo.
+
 ## Decisões rejeitadas
 - (nenhuma até agora)
 
