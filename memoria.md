@@ -43,6 +43,10 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 
 - 2026-10-14 — **Repositório GitHub público**: https://github.com/neliocastro/coqueiral-da-barra (branch `main`). Escolha do cliente (público). Próximo: importar na Vercel (Output Directory `public`, sem build).
 
+- 2026-10-14 — **Otimização de desempenho (PSI mobile: 85 → meta ≥ 95)**. Diagnóstico do PSI: LCP 3,6 s (o LCP é o `<h1>`, atrasado por CSS/fontes do Google), FCP 2,9 s, CLS 0, TBT 20 ms; A11y/BP/SEO 100. Correções: (1) fontes **hospedadas em `public/fonts/`** (Fraunces itálico 500–600 e Hanken 400–600, latin, eixos limitados e subset: 117 KB → 81 KB), `preload` da fonte do título, sem conexões ao Google Fonts; (2) slides 2 e 3 do hero saem do HTML (`<template id="hero-extra">`) e só carregam após o `load`, depois o crossfade começa (classe `.is-playing`); (3) imagens WebP recomprimidas (q64–72) + variantes de 480 px, `srcset/sizes` corretos, hero mobile 640 px (126 KB, antes 230 KB); (4) `main.js` com `defer`, scroll com `requestAnimationFrame` (sem reflow forçado); (5) `vercel.json`: CSP, COOP, cache de fontes (imutável) e imagens (7 dias + stale-while-revalidate). Medição local equivalente (simulate, base vs nova): nota 90–93 → 94–98, FCP 1,5 → 1,1 s, LCP 3,2–3,5 → 2,5–3,2 s, SI 1,5 → 1,1 s. Nota real só após novo deploy + PSI.
+
+- 2026-10-14 — **Como chegar ganhou o cartão 04**: travessia de barco Ituberá → Barra (lanchas rápidas e barcos convencionais, horários e nota de variação), texto fornecido pelo cliente; cartão em largura total abaixo das 3 rotas. Nomes de operadoras privadas omitidos de propósito (decisão minha; cliente pode pedir para incluir). Horários vêm do texto do cliente e não foram verificados.
+
 ## Decisões rejeitadas
 - (nenhuma até agora)
 
@@ -61,7 +65,15 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 - Há arquivos `._*` (metadados do macOS) dentro de `minhas-fotos/` e `referencias/`; ignorar.
 
 ## Soluções aplicadas
-- (nenhuma ainda)
+- Ver "Otimização de desempenho" em Alterações/Decisões (2026-10-14).
+
+## Aprendizados (desempenho e testes)
+- **Classe CSS reutilizada quebra layout**: a classe `.hero.play` colidiu com `.play` (botão de vídeo, `width:68px; margin:-34px`) e encolheu o hero para 68 px. Usar nomes únicos (`.is-playing`) e checar o hero no celular depois de mexer em classes.
+- O LCP deste site é o texto do `<h1>`; imagens de hero em tela cheia são ignoradas como candidato a LCP, mas competem por banda: não carregar slides extras antes do `load`.
+- Lighthouse local: o CLI recusa Node x64 em Mac Apple Silicon; funciona abrindo o Chrome com `--remote-debugging-port` e chamando o módulo `lighthouse` por script (`throttlingMethod: simulate` reproduz o PSI). Comparar sempre versão antiga e nova no mesmo servidor local, com gzip.
+- `Cache-Control: immutable` só em arquivos com nome novo ao mudar o conteúdo (fontes). Imagens recomprimidas mantiveram o nome: cache de 7 dias em vez de imutável.
+- Navegador da pane: cache de CSS (`max-age`) engana testes; usar outra porta/origem para ver a versão nova.
+- WebP/AVIF: não há AVIF (sem ferramenta local); `cwebp` ok. Fotos de 1600 px limitam a nitidez; trocar por originais maiores vale mais que comprimir.
 
 ## Pendências
 - Criar logotipo de "Coqueiral da Barra" e checar disponibilidade de domínio/marca.
@@ -79,7 +91,8 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 ## Próximos passos (após a v1)
 - Conectar o repo na Vercel e publicar; depois definir domínio e trocar `og:image` para URL absoluta (https://SEU-DOMINIO/imagens-site/og-image.jpg); adicionar sitemap.xml e `<link rel="canonical">`.
 - Cliente revisar a página; ajustar textos/fotos; preencher medidas de cada lote e confirmar qual cor do mapa é cada lote.
-- Rodar Lighthouse e teste de teclado/leitor de tela; testar Safari/Firefox.
+- Fazer commit/push da otimização, rodar o PSI de novo na URL da Vercel e comparar com 85 (LCP 3,6 s). Se o LCP ainda passar de 2,5 s: reduzir a fonte Fraunces (travar o eixo `opsz`) ou carregar o hero via CSS após o primeiro paint.
+- Teste de teclado/leitor de tela; testar Safari/Firefox.
 - Logotipo, domínio, hospedagem, favicon final, imagem Open Graph.
 
 ## Próximos passos (originais)

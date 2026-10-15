@@ -17,9 +17,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fraunces-italic-500-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Coqueiral da Barra","inLanguage":["pt-BR","en"],"description":"Três lotes de 1.000 m² em Barra de Serinhaém, Ituberá (BA)."}
@@ -55,19 +53,21 @@
 <section class="hero" aria-labelledby="h-hero">
   <div class="hero-slides" aria-hidden="true">
     <picture class="slide s1">
-      <source media="(max-width:700px)" type="image/webp" srcset="imagens-site/hero-mobile-480.webp 480w, imagens-site/hero-mobile-739.webp 739w" sizes="100vw">
+      <source media="(max-width:700px)" type="image/webp" srcset="imagens-site/hero-mobile-480.webp 480w, imagens-site/hero-mobile-640.webp 640w" sizes="100vw">
       <source type="image/webp" srcset="imagens-site/hero-desktop-800.webp 800w, imagens-site/hero-desktop-1600.webp 1600w" sizes="100vw">
       <img src="imagens-site/hero-desktop.jpg" alt="" width="1600" height="739" fetchpriority="high" decoding="async">
     </picture>
+  </div>
+  <template id="hero-extra">
     <picture class="slide s2">
       <source type="image/webp" srcset="imagens-site/terreno-1-800.webp 800w, imagens-site/terreno-1-1600.webp 1600w" sizes="100vw">
-      <img src="imagens-site/terreno-1.jpg" alt="" width="1600" height="739" loading="lazy" decoding="async">
+      <img src="imagens-site/terreno-1.jpg" alt="" width="1600" height="739" decoding="async">
     </picture>
     <picture class="slide s3">
       <source type="image/webp" srcset="imagens-site/baia-entardecer-800.webp 800w, imagens-site/baia-entardecer-1600.webp 1600w" sizes="100vw">
-      <img src="imagens-site/baia-entardecer.jpg" alt="" width="1600" height="739" loading="lazy" decoding="async">
+      <img src="imagens-site/baia-entardecer.jpg" alt="" width="1600" height="739" decoding="async">
     </picture>
-  </div>
+  </template>
   <div class="hero-veil"></div>
   <div class="container hero-content">
     <p class="eyebrow" data-en="Barra de Serinhaém · Bahia">Barra de Serinhaém · Bahia</p>
@@ -92,10 +92,10 @@
     </div>
     <div class="duo reveal">
       <figure class="ph ph-a">
-        <picture><source type="image/webp" srcset="imagens-site/barcos-1-800.webp 800w, imagens-site/barcos-1-1600.webp 1600w" sizes="(max-width:900px) 90vw, 560px"><img src="imagens-site/barcos-1.jpg" alt="Barcos de pesca ancorados na baía" data-en-alt="Fishing boats anchored in the bay" width="1600" height="739" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="imagens-site/barcos-1-480.webp 480w, imagens-site/barcos-1-800.webp 800w, imagens-site/barcos-1-1600.webp 1600w" sizes="(max-width:900px) 90vw, 560px"><img src="imagens-site/barcos-1.jpg" alt="Barcos de pesca ancorados na baía" data-en-alt="Fishing boats anchored in the bay" width="1600" height="739" loading="lazy" decoding="async"></picture>
       </figure>
       <figure class="ph ph-b">
-        <picture><source type="image/webp" srcset="imagens-site/praia-1-800.webp 800w, imagens-site/praia-1-1600.webp 1600w" sizes="(max-width:900px) 70vw, 380px"><img src="imagens-site/praia-1.jpg" alt="Praia de areia clara com coqueiros" data-en-alt="Pale-sand beach with coconut palms" width="1600" height="739" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="imagens-site/praia-1-480.webp 480w, imagens-site/praia-1-800.webp 800w, imagens-site/praia-1-1600.webp 1600w" sizes="(max-width:900px) 70vw, 380px"><img src="imagens-site/praia-1.jpg" alt="Praia de areia clara com coqueiros" data-en-alt="Pale-sand beach with coconut palms" width="1600" height="739" loading="lazy" decoding="async"></picture>
       </figure>
     </div>
   </div>
@@ -111,7 +111,7 @@
     </div>
     <div class="cards">
       <article class="card reveal" data-lot="1">
-        <picture><source type="image/webp" srcset="imagens-site/terreno-1-800.webp 800w, imagens-site/terreno-1-1600.webp 1600w" sizes="(max-width:900px) 90vw, 380px"><img src="imagens-site/terreno-1.jpg" alt="Coqueiral do terreno com a baía ao fundo" data-en-alt="Coconut grove on the land with the bay behind" width="1600" height="739" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="imagens-site/terreno-1-480.webp 480w, imagens-site/terreno-1-800.webp 800w, imagens-site/terreno-1-1600.webp 1600w" sizes="(max-width:900px) 92vw, 380px"><img src="imagens-site/terreno-1.jpg" alt="Coqueiral do terreno com a baía ao fundo" data-en-alt="Coconut grove on the land with the bay behind" width="1600" height="739" loading="lazy" decoding="async"></picture>
         <div class="card-body">
           <h3 data-en="Lot 1">Lote 1</h3>
           <ul class="chips"><li>1.000 m²</li><li data-en="Price on request">Preço sob consulta</li></ul>
@@ -120,7 +120,7 @@
         </div>
       </article>
       <article class="card reveal" data-lot="2">
-        <picture><source type="image/webp" srcset="imagens-site/terreno-2-800.webp 800w, imagens-site/terreno-2-1600.webp 1600w" sizes="(max-width:900px) 90vw, 380px"><img src="imagens-site/terreno-2.jpg" alt="Terreno plano entre coqueiros, com a água ao fundo" data-en-alt="Flat land among coconut palms, with water behind" width="1600" height="739" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="imagens-site/terreno-2-480.webp 480w, imagens-site/terreno-2-800.webp 800w, imagens-site/terreno-2-1600.webp 1600w" sizes="(max-width:900px) 92vw, 380px"><img src="imagens-site/terreno-2.jpg" alt="Terreno plano entre coqueiros, com a água ao fundo" data-en-alt="Flat land among coconut palms, with water behind" width="1600" height="739" loading="lazy" decoding="async"></picture>
         <div class="card-body">
           <h3 data-en="Lot 2">Lote 2</h3>
           <ul class="chips"><li>1.000 m²</li><li data-en="Price on request">Preço sob consulta</li></ul>
@@ -129,7 +129,7 @@
         </div>
       </article>
       <article class="card reveal" data-lot="3">
-        <picture><source type="image/webp" srcset="imagens-site/terreno-3-800.webp 800w, imagens-site/terreno-3-1600.webp 1600w" sizes="(max-width:900px) 90vw, 380px"><img src="imagens-site/terreno-3.jpg" alt="Grama e coqueiros com a baía no horizonte" data-en-alt="Grass and palms with the bay on the horizon" width="1600" height="739" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="imagens-site/terreno-3-480.webp 480w, imagens-site/terreno-3-800.webp 800w, imagens-site/terreno-3-1600.webp 1600w" sizes="(max-width:900px) 92vw, 380px"><img src="imagens-site/terreno-3.jpg" alt="Grama e coqueiros com a baía no horizonte" data-en-alt="Grass and palms with the bay on the horizon" width="1600" height="739" loading="lazy" decoding="async"></picture>
         <div class="card-body">
           <h3 data-en="Lot 3">Lote 3</h3>
           <ul class="chips"><li>1.000 m²</li><li data-en="Price on request">Preço sob consulta</li></ul>
@@ -166,14 +166,14 @@
       <p data-en="Real photos of the lots and the Barra de Serinhaém shoreline.">Fotos reais dos terrenos e da orla de Barra de Serinhaém.</p>
     </div>
     <div class="gallery reveal">
-      <button class="g w2" type="button" data-full="imagens-site/pano-1-1600.webp"><picture><source type="image/webp" srcset="imagens-site/pano-1-800.webp"><img src="imagens-site/pano-1.jpg" alt="Coqueiral aberto do terreno" data-en-alt="Open coconut grove on the land" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
+      <button class="g w2" type="button" data-full="imagens-site/pano-1-1600.webp"><picture><source type="image/webp" srcset="imagens-site/pano-1-480.webp 480w, imagens-site/pano-1-800.webp 800w" sizes="(max-width:860px) 100vw, 560px"><img src="imagens-site/pano-1.jpg" alt="Coqueiral aberto do terreno" data-en-alt="Open coconut grove on the land" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
       <button class="g tall" type="button" data-full="imagens-site/vertical-1-739.webp"><picture><source type="image/webp" srcset="imagens-site/vertical-1-480.webp"><img src="imagens-site/vertical-1.jpg" alt="Trilha de areia até a baía entre coqueiros" data-en-alt="Sand path to the bay among coconut palms" width="739" height="1600" loading="lazy" decoding="async"></picture></button>
-      <button class="g" type="button" data-full="imagens-site/pano-2-1600.webp"><picture><source type="image/webp" srcset="imagens-site/pano-2-800.webp"><img src="imagens-site/pano-2.jpg" alt="Caminho de areia com a baía ao fundo" data-en-alt="Sand path with the bay behind" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
-      <button class="g" type="button" data-full="imagens-site/praia-2-1600.webp"><picture><source type="image/webp" srcset="imagens-site/praia-2-800.webp"><img src="imagens-site/praia-2.jpg" alt="Orla com coqueiros e areia clara" data-en-alt="Shoreline with palms and pale sand" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
-      <button class="g" type="button" data-full="imagens-site/trilha-luz-1600.webp"><picture><source type="image/webp" srcset="imagens-site/trilha-luz-800.webp"><img src="imagens-site/trilha-luz.jpg" alt="Trilha entre coqueiros na luz da tarde" data-en-alt="Trail among palms in afternoon light" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
-      <button class="g w2" type="button" data-full="imagens-site/terreno-4-1600.webp"><picture><source type="image/webp" srcset="imagens-site/terreno-4-800.webp"><img src="imagens-site/terreno-4.jpg" alt="Terreno plano com coqueiros ao sol" data-en-alt="Flat land with sunlit coconut palms" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
+      <button class="g" type="button" data-full="imagens-site/pano-2-1600.webp"><picture><source type="image/webp" srcset="imagens-site/pano-2-480.webp 480w, imagens-site/pano-2-800.webp 800w" sizes="(max-width:860px) 50vw, 340px"><img src="imagens-site/pano-2.jpg" alt="Caminho de areia com a baía ao fundo" data-en-alt="Sand path with the bay behind" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
+      <button class="g" type="button" data-full="imagens-site/praia-2-1600.webp"><picture><source type="image/webp" srcset="imagens-site/praia-2-480.webp 480w, imagens-site/praia-2-800.webp 800w" sizes="(max-width:860px) 50vw, 340px"><img src="imagens-site/praia-2.jpg" alt="Orla com coqueiros e areia clara" data-en-alt="Shoreline with palms and pale sand" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
+      <button class="g" type="button" data-full="imagens-site/trilha-luz-1600.webp"><picture><source type="image/webp" srcset="imagens-site/trilha-luz-480.webp 480w, imagens-site/trilha-luz-800.webp 800w" sizes="(max-width:860px) 50vw, 340px"><img src="imagens-site/trilha-luz.jpg" alt="Trilha entre coqueiros na luz da tarde" data-en-alt="Trail among palms in afternoon light" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
+      <button class="g w2" type="button" data-full="imagens-site/terreno-4-1600.webp"><picture><source type="image/webp" srcset="imagens-site/terreno-4-480.webp 480w, imagens-site/terreno-4-800.webp 800w" sizes="(max-width:860px) 100vw, 560px"><img src="imagens-site/terreno-4.jpg" alt="Terreno plano com coqueiros ao sol" data-en-alt="Flat land with sunlit coconut palms" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
       <button class="g tall" type="button" data-full="imagens-site/vertical-2-739.webp"><picture><source type="image/webp" srcset="imagens-site/vertical-2-480.webp"><img src="imagens-site/vertical-2.jpg" alt="Trilha de areia entre coqueiros" data-en-alt="Sand trail between coconut palms" width="739" height="1600" loading="lazy" decoding="async"></picture></button>
-      <button class="g" type="button" data-full="imagens-site/barcos-2-1600.webp"><picture><source type="image/webp" srcset="imagens-site/barcos-2-800.webp"><img src="imagens-site/barcos-2.jpg" alt="Barcos na baía ao entardecer" data-en-alt="Boats in the bay at dusk" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
+      <button class="g" type="button" data-full="imagens-site/barcos-2-1600.webp"><picture><source type="image/webp" srcset="imagens-site/barcos-2-480.webp 480w, imagens-site/barcos-2-800.webp 800w" sizes="(max-width:860px) 50vw, 340px"><img src="imagens-site/barcos-2.jpg" alt="Barcos na baía ao entardecer" data-en-alt="Boats in the bay at dusk" width="1600" height="739" loading="lazy" decoding="async"></picture></button>
     </div>
   </div>
 </section>
@@ -259,6 +259,38 @@
           <li data-en="Get off at the Ituberá bus station and take a taxi or moto-taxi to the river port to board the speedboat to Barra de Serinhaém.">Desça na rodoviária de Ituberá e pegue um táxi ou mototáxi até o porto fluvial para embarcar na lancha rápida rumo a Barra de Serinhaém.</li>
         </ol>
       </article>
+      <article class="step wide reveal">
+        <span class="num">04</span>
+        <h3 data-en="From Ituberá to the village by boat">De Ituberá à Barra, de barco</h3>
+        <p class="tag" data-en="The final stretch, along the Serinhaém River">A travessia final, pelo Rio Serinhaém</p>
+        <p class="lead-s" data-en="Boats leave Ituberá from two main points: the Ituberá Pier (usually used when the tide is fuller) or the traditional Saici Bridge. There are two kinds of boats on the regular route.">Os barcos saem de Ituberá por dois pontos principais: o Cais de Ituberá (normalmente usado quando a maré está mais cheia) ou a tradicional Ponte do Saici. Há duas categorias de embarcação no trajeto regular.</p>
+        <div class="crossing">
+          <div>
+            <h4 data-en="Speedboats">Lanchas rápidas</h4>
+            <p class="tag" data-en="Fastest option">A opção mais ágil</p>
+            <ul>
+              <li data-en="<strong>Travel time:</strong> about 30 to 40 minutes.">
+                <strong>Tempo de viagem:</strong> cerca de 30 a 40 minutos.</li>
+              <li data-en="<strong>Ituberá → Barra de Serinhaém:</strong> usually Monday to Saturday, departing at 7:00, 10:00, 13:30 and 16:30.">
+                <strong>Ituberá → Barra de Serinhaém:</strong> geralmente de segunda a sábado, com saídas às 07:00, 10:00, 13:30 e 16:30.</li>
+              <li data-en="<strong>Barra de Serinhaém → Ituberá:</strong> boats usually stop by the village at 6:00, 9:00, 11:40 and 15:00.">
+                <strong>Barra de Serinhaém → Ituberá:</strong> as lanchas costumam passar pela vila às 06:00, 09:00, 11:40 e 15:00.</li>
+              <li data-en="Local operators also run private trips by appointment.">Operadores locais também fazem passeios particulares sob agendamento.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-en="Conventional boats">Barcos convencionais</h4>
+            <p class="tag" data-en="Rustic, slower and cheaper">Rústica, mais lenta e mais barata</p>
+            <ul>
+              <li data-en="<strong>Travel time:</strong> between 1h30 and 2 hours down the river.">
+                <strong>Tempo de viagem:</strong> entre 1h30 e 2 horas descendo o rio.</li>
+              <li data-en="<strong>Schedule:</strong> fewer options per day, usually one boat in the early morning (around 6:30) and another in early afternoon (around 13:00) on weekdays.">
+                <strong>Horários:</strong> menos opções ao dia; geralmente um barco no início da manhã (por volta das 06:30) e outro no começo da tarde (por volta das 13:00) em dias de semana.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note" data-en="Important: navigation depends on river conditions and local traffic, so times and boarding points may change with the season. Confirm departures with the boatmen at the Ituberá Pier or the Saici Bridge when you arrive in town.">Importante: como a navegação depende das condições do rio e do movimento local, horários e pontos de embarque podem mudar conforme a época. Confirme as saídas com os barqueiros no Cais de Ituberá ou na Ponte do Saici ao chegar à cidade.</p>
+      </article>
     </div>
     <p class="flex-note reveal" data-en="Times and distances are approximate. Ask us on WhatsApp for help planning your visit.">Tempos e distâncias são aproximados. Fale com a gente pelo WhatsApp para planejar a sua visita.</p>
   </div>
@@ -284,7 +316,7 @@
 
 <!-- 9. CTA FINAL -->
 <section id="contato" class="cta" aria-labelledby="h-cta">
-  <div class="cta-bg" aria-hidden="true"><picture><source type="image/webp" srcset="imagens-site/baia-entardecer-800.webp 800w, imagens-site/baia-entardecer-1600.webp 1600w" sizes="100vw"><img src="imagens-site/baia-entardecer.jpg" alt="" width="1600" height="739" loading="lazy" decoding="async"></picture></div>
+  <div class="cta-bg" aria-hidden="true"><picture><source type="image/webp" srcset="imagens-site/baia-entardecer-480.webp 480w, imagens-site/baia-entardecer-800.webp 800w, imagens-site/baia-entardecer-1600.webp 1600w" sizes="100vw"><img src="imagens-site/baia-entardecer.jpg" alt="" width="1600" height="739" loading="lazy" decoding="async"></picture></div>
   <div class="hero-veil"></div>
   <div class="container cta-inner reveal">
     <h2 id="h-cta" data-en="<em>Shall we talk about your lot?</em>"><em>Vamos conversar sobre o seu lote?</em></h2>
@@ -322,6 +354,6 @@
   <img alt="" id="lb-img">
 </dialog>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+/* Fontes hospedadas no próprio site (latin): evita 2 conexões externas e acelera o LCP */
+@font-face{font-family:"Fraunces";font-style:italic;font-weight:500 600;font-display:swap;src:url(../fonts/fraunces-italic-500-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:400 600;font-display:swap;src:url(../fonts/hanken-grotesk-400-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
   --sand:#F4EFE6; --sand-2:#EAE2D3; --night:#14231D; --forest:#1F3A2F;
   --ink:#1B211E; --ink-2:#58615B; --ivory:#F7F3EA; --green:#2F5D46; --bay:#3E7C8C; --copper:#B98652;
@@ -64,11 +67,15 @@ p{margin:0 0 1em}
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--ivory);overflow:hidden;background:var(--night)}
 .hero-slides,.cta-bg{position:absolute;inset:0}
-.slide{position:absolute;inset:0;opacity:0;animation:fade 21s infinite}
+.slide{position:absolute;inset:0;opacity:0}
 .slide img,.cta-bg img{width:100%;height:100%;object-fit:cover}
-.s1{opacity:1;animation-delay:0s}.s2{animation-delay:7s}.s3{animation-delay:14s}
+.s1{opacity:1}
+/* o crossfade só começa quando os slides 2 e 3 já foram carregados (classe .is-playing, via JS) */
+.is-playing .slide{animation:fade 21s infinite}
+.is-playing .s1{animation-name:fade1}
+.is-playing .s2{animation-delay:7s}
+.is-playing .s3{animation-delay:14s}
 @keyframes fade{0%{opacity:0;transform:scale(1)}6%{opacity:1}33%{opacity:1}40%{opacity:0}100%{opacity:0;transform:scale(1.06)}}
-.s1{animation-name:fade1}
 @keyframes fade1{0%{opacity:1;transform:scale(1)}33%{opacity:1}40%{opacity:0}93%{opacity:0;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,35,29,.45) 0%,rgba(20,35,29,.15) 38%,rgba(20,35,29,.72) 100%)}
 .hero-content{position:relative;padding-block:140px 96px;max-width:var(--max)}
@@ -156,6 +163,14 @@ figcaption a{text-underline-offset:3px}
 .step ol{margin:0;padding-left:1.2em;display:grid;gap:12px;color:var(--ink-2);font-size:.96rem;line-height:1.6}
 .step li::marker{color:var(--copper-d);font-weight:600}
 .step strong{color:var(--ink)}
+.step.wide{grid-column:1/-1}
+.step .lead-s{color:var(--ink-2);max-width:70ch;margin:0 0 24px}
+.crossing{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:8px}
+.crossing h4{margin:0 0 4px;font:italic 600 1.2rem/1.2 var(--serif)}
+.crossing .tag{margin-bottom:14px}
+.crossing ul{margin:0;padding-left:1.2em;display:grid;gap:12px;color:var(--ink-2);font-size:.96rem;line-height:1.6}
+.crossing li::marker{color:var(--copper-d)}
+.step .note{margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(27,33,30,.12)}
 
 /* faq */
 .faq details{border-bottom:1px solid rgba(27,33,30,.15);padding:22px 4px}
@@ -216,6 +231,7 @@ figcaption a{text-underline-offset:3px}
   .cards .card:last-child{grid-column:auto}
   .trio{grid-template-columns:1fr;gap:32px}
   .steps{grid-template-columns:1fr}
+  .crossing{grid-template-columns:1fr;gap:24px}
   .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
   .videos{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}

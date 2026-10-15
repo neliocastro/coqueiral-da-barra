@@ -93,9 +93,18 @@
   doc.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMenu(); } });
 
   var header = doc.querySelector('.site-header');
-  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
-  onScroll();
+  var scrolled = false, ticking = false;
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.pageYOffset;
+      if ((y > 40) !== scrolled) { scrolled = y > 40; header.classList.toggle('scrolled', scrolled); }
+      ticking = false;
+    });
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   /* ---------- revelar ao rolar ---------- */
   var items = doc.querySelectorAll('.reveal');
@@ -139,4 +148,22 @@
       f.focus();
     });
   });
+
+  /* ---------- hero: carrega os slides 2 e 3 só depois do carregamento da página ---------- */
+  function startHero() {
+    var tpl = doc.getElementById('hero-extra');
+    var box = doc.querySelector('.hero-slides');
+    if (!tpl || !box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+    var imgs = [];
+    tpl.content.querySelectorAll('img').forEach(function (i) { imgs.push(i); });
+    box.appendChild(tpl.content.cloneNode(true));
+    var pending = box.querySelectorAll('.s2 img, .s3 img');
+    var left = pending.length;
+    function done() { left -= 1; if (left <= 0) { doc.querySelector('.hero').classList.add('is-playing'); } }
+    pending.forEach(function (i) {
+      if (i.complete) { done(); } else { i.addEventListener('load', done); i.addEventListener('error', done); }
+    });
+  }
+  function whenIdle() { (window.requestIdleCallback || function (f) { setTimeout(f, 300); })(startHero); }
+  if (doc.readyState === 'complete') { whenIdle(); } else { window.addEventListener('load', whenIdle); }
 })();
