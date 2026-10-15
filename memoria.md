@@ -47,6 +47,10 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 
 - 2026-10-14 — **Como chegar ganhou o cartão 04**: travessia de barco Ituberá → Barra (lanchas rápidas e barcos convencionais, horários e nota de variação), texto fornecido pelo cliente; cartão em largura total abaixo das 3 rotas. Nomes de operadoras privadas omitidos de propósito (decisão minha; cliente pode pedir para incluir). Horários vêm do texto do cliente e não foram verificados.
 
+- 2026-10-14 — **Vercel Web Analytics adicionado** (pedido do cliente): `<script defer src="/_vercel/insights/script.js">` no fim do `index.html`. Não usa o pacote `@vercel/analytics` (o passo "React/Next.js" do painel não se aplica a site estático). Compatível com a CSP atual (mesma origem). O script só existe no deploy; localmente retorna 404 (normal). Falta habilitar o Analytics no painel da Vercel.
+
+- 2026-10-14 — **PageSpeed pós-otimização aprovado pelo cliente** ("perfeito"). Detalhes numéricos do novo PSI não foram registrados.
+
 ## Decisões rejeitadas
 - (nenhuma até agora)
 

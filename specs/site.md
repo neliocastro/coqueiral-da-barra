@@ -111,4 +111,4 @@ Ver itens ❓ acima + nome/marca do empreendimento (sugestões em memoria.md; us
 
 ## 14. Escopo
 **Dentro:** landing page bilíngue; otimização das fotos fornecidas; CTA WhatsApp; seções acima; SEO básico; documentação em `specs/` e `memoria.md`.
-**Fora (por ora):** CMS/painel administrativo; formulário com backend; pagamento/reserva online; área do cliente; tour virtual 3D; blog; chat com IA; criação de informações comerciais; registro de domínio/hospedagem; tráfego pago/analytics (pode entrar depois com autorização).
+**Fora (por ora):** CMS/painel administrativo; formulário com backend; pagamento/reserva online; área do cliente; tour virtual 3D; blog; chat com IA; criação de informações comerciais; registro de domínio/hospedagem; tráfego pago. **Analytics:** ✅ autorizado em 2026-10-14 — Vercel Web Analytics (script `/_vercel/insights/script.js`, sem cookies, sem pacote npm); eventos personalizados (ex.: clique no WhatsApp) exigem plano pago.
