@@ -56,6 +56,7 @@ Prefixo = 8 primeiros caracteres do arquivo. ✅ escolha feita por mim; cliente 
 
 ## 5. Páginas
 ✅ Landing page única (one-page), navegação por âncoras.
+✅ Exceção aprovada em 2026-10-15: página legal **/privacidade** (`public/privacidade.html`), ligada no rodapé. Arquivos para IAs: `/llms.txt` e `/llms-full.txt`.
 
 ## 6. Seções (ordem proposta ⏳)
 1. **Header** flutuante: logo/nome, âncoras, seletor PT/EN, CTA WhatsApp.
@@ -74,7 +75,8 @@ Prefixo = 8 primeiros caracteres do arquivo. ✅ escolha feita por mim; cliente 
 - ✅ Seletor PT/EN.
 - ✅ Botão flutuante de WhatsApp + CTAs por seção (link `wa.me` com texto pré-preenchido, por idioma e por lote).
 - ⏳ Galeria com lightbox acessível; rolagem suave por âncoras; animações de entrada discretas.
-- ⏳ Mapa/localização; metadados Open Graph; favicon.
+- ✅ Mapa carregado só ao clicar (fachada com foto + botão "Ver o mapa dos lotes"), igual aos vídeos: sem cookies do Google antes do clique, dispensa banner de cookies (aprovado 2026-10-15).
+- ⏳ Metadados Open Graph; favicon.
 - Sem backend, sem login, sem carrinho, sem pagamento.
 
 ## 8. Chamadas para ação
@@ -86,6 +88,12 @@ Prefixo = 8 primeiros caracteres do arquivo. ✅ escolha feita por mim; cliente 
 
 ## 9. Informações ainda por definir
 Ver itens ❓ acima + nome/marca do empreendimento (sugestões em memoria.md; usar título descritivo provisório), logotipo (a criar, original), link público do mapa, documentação, infraestrutura, verificação dos fatos do local, créditos dos vídeos, depoimentos (não inventar), domínio e hospedagem, política de privacidade.
+
+## 9b. SEO
+- ✅ Palavra-chave principal: **"terreno à venda na Bahia"** (maior demanda no autocompletar do Google). Secundárias: "terreno na praia Bahia", "terreno à venda em Ituberá", "terreno perto de Barra Grande", "Barra de Serinhaém". Evitar "pé na areia"/"beira-mar" (lote fica a ~100 m da praia).
+- Já aplicada no `<title>`, meta description, Open Graph e JSON-LD (WebSite + Place com coordenadas). H1 também usa a palavra-chave (aprovado 2026-10-15).
+- JPG de reserva dentro de `<picture>` são mantidos (decisão do cliente): alerta "formato antigo" de ferramentas de SEO é falso positivo.
+- Pendente: CNPJ/CRECI (só se existir; não inventar), depoimentos reais, `canonical`/`sitemap.xml` após o domínio final.
 
 ## 10. Stack técnica
 ✅ **HTML5 + CSS3 + JavaScript puro (vanilla)**, sem framework e sem etapa de build. Arquivos estáticos (`index.html`, `css/`, `js/`, `imagens-site/`). Fontes via Google Fonts (ver design.md) com `font-display: swap`. Qualquer mudança de stack exige minha autorização.

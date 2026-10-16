@@ -2,14 +2,19 @@
 
 Status: ⏳ rascunho para aprovação. Textos originais, só com fatos confirmados por você (1.000 m², ~100 m da praia, ~7 km de Barra Grande em linha reta pela baía, vila de pescadores, Ituberá/BA, Costa do Dendê, Baía de Camamu, foz dos rios Serinhaém/Santarém) ou visíveis nas fotos. Itens com [ ] dependem de dado a confirmar. Sem preço, sem promessa de valorização/rentabilidade.
 
+## SEO (2026-10-15)
+- `<title>` PT: Terreno à venda na Bahia, perto da praia | Coqueiral da Barra · EN: Land for sale in Bahia, near the beach | Coqueiral da Barra
+- Meta description PT: Terreno à venda na Bahia: 3 lotes de 1.000 m² em Barra de Serinhaém, Ituberá, a cerca de 100 m da praia e a 7 km de Barra Grande pela baía. Preço sob consulta.
+- Página **/privacidade**: texto em PT + resumo em EN (rascunho meu; revisar com advogado se houver dúvida).
+
 ## Header
 - Nav PT: O lugar · Os lotes · Galeria · Localização · Contato | EN: The place · The lots · Gallery · Location · Contact
 - CTA: **Falar no WhatsApp** / **Chat on WhatsApp**
 
 ## 1. Hero
 - Rótulo: BARRA DE SERINHAÉM · BAHIA
-- **H1 PT:** *Um coqueiral a poucos passos da Baía de Camamu.* (alterado pelo cliente em 2026-10-14)
-- **H1 EN:** *A coconut grove steps from Camamu Bay.*
+- **H1 PT:** *Terreno à venda na Bahia, a poucos passos da Baía de Camamu.* (alterado pelo cliente em 2026-10-15, para SEO; antes: "Um coqueiral a poucos passos da Baía de Camamu.")
+- **H1 EN:** *Land for sale in Bahia, steps from Camamu Bay.*
 - Subtítulo PT: Três lotes de 1.000 m² em um povoado de pescadores na Costa do Dendê.
 - Subtítulo EN: Three 1,000 m² lots in a fishing village on Bahia's Dendê Coast.
 - Botões: Falar no WhatsApp / Chat on WhatsApp · Ver os lotes / See the lots

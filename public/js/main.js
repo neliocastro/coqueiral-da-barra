@@ -46,8 +46,8 @@
     });
     updateWa();
     doc.title = lang === 'en'
-      ? 'Coqueiral da Barra — Land in Barra de Serinhaém, Bahia'
-      : 'Coqueiral da Barra — Terrenos em Barra de Serinhaém, Bahia';
+      ? 'Land for sale in Bahia, near the beach | Coqueiral da Barra'
+      : 'Terreno à venda na Bahia, perto da praia | Coqueiral da Barra';
     store(false, lang);
   }
   /* guarda o HTML do texto, preservando o ícone de seta quando houver */
@@ -145,6 +145,18 @@
       box.className = 'video';
       box.appendChild(f);
       btn.replaceWith(box);
+      f.focus();
+    });
+  });
+
+  /* ---------- mapa (carrega só após o clique: sem cookies do Google antes disso) ---------- */
+  doc.querySelectorAll('.map-facade').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = doc.createElement('iframe');
+      f.src = btn.dataset.map;
+      f.title = current === 'en' ? 'Map showing the position of the three lots' : 'Mapa com a posição dos três lotes';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      btn.replaceWith(f);
       f.focus();
     });
   });

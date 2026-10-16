@@ -53,6 +53,8 @@ Checar disponibilidade de domínio/marca e evitar confusão com Sirinhaém (PE) 
 
 - 2026-10-14 — **Domínio atual: `coqueiral-da-barra-public.vercel.app`**. Cliente quer trocar depois para `coqueiral-da-barra.vercel.app` (parecia livre; trocar em Settings → Domains e redirecionar o antigo com 308). Quando trocar: definir `og:image` absoluto, `canonical` e `sitemap.xml` com o domínio novo.
 
+- 2026-10-15 — **Ajustes de SEO (relatório LemonSEO, nota 7,0)**: palavra-chave "terreno à venda na Bahia" no title/meta/OG/JSON-LD; alt descritivo em todas as imagens (0 sem alt); mapa só ao clicar (fachada); página **/privacidade** (exceção à página única, aprovada); `llms.txt` e `llms-full.txt`; JSON-LD com Place + coordenadas. **H1 trocado** (aprovado pelo cliente) para "Terreno à venda na Bahia, a poucos passos da Baía de Camamu." / EN "Land for sale in Bahia, steps from Camamu Bay." — substitui o H1 de 2026-10-14. **Mantidos de propósito**: JPG de reserva (falso positivo, decisão do cliente). **Falsos positivos**: analytics (Vercel Web Analytics não é detectado pela ferramenta) e formatos de imagem. **Não feitos**: CNPJ e depoimentos (não existem/não inventar); banner de cookies (desnecessário: site sem cookies próprios e embeds só após clique).
+
 ## Decisões rejeitadas
 - (nenhuma até agora)
 
